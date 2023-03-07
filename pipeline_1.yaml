@@ -16,3 +16,8 @@ doe: "a deer, a female deer"
      count: 1
      location: "a pear tree"
    turtle-doves: two
+table:
+ name: blah
+ columns:
+   - col_2
+   - col_3
