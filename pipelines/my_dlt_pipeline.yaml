@@ -1,10 +1,10 @@
 my_table_1:
   comment: "My table"
-  keys:
+  values:
     - hello
     - world
 my_table_2:
   comment: "Another table"
-  keys:
+  values:
     - testing
     - testing_2
