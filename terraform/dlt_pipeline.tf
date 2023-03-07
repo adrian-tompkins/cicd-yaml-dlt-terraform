@@ -10,6 +10,9 @@ resource databricks_pipeline this {
   cluster {
     label       = "default"
     num_workers = 1
+    init_scripts = [
+      {"dbfs": {"destination": "dbfs://init_scripts/artifactory.sh"}}
+    ]
   }
 
   library {
