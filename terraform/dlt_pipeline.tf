@@ -22,7 +22,18 @@ resource databricks_pipeline this {
   continuous = false
 }
 
+resource null_resource git_changed_trigger {
+  triggers = {
+    git_file_hash = trimspace(file("../.git/${trimspace(trimprefix(file("../.git/HEAD"), "ref:"))}"))
+  }
+}
+
 resource databricks_repo this {
   url = "https://github.com/adrian-tompkins/cicd-yaml-dlt-terraform.git"
   path = "/Repos/prod/cicd-yaml-dlt-terraform"
+   lifecycle {
+    replace_triggered_by = [
+      null_resource.git_changed_trigger.id
+    ]
+  }
 }
