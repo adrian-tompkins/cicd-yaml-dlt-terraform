@@ -1,0 +1,5 @@
+my_table_7:
+  comment: "Table 7"
+  values:
+    - table_7
+    - value_7
