@@ -1,11 +1,8 @@
 # Databricks notebook source
-%pip install PyYAML==6.0
-
-# COMMAND ----------
 import dlt
 from libs import configuration
 
-pipeline_config = configuration.get_tables(spark.conf.get('pipeline.name'))
+pipeline_config = configuration.get_pipeline_config(spark.conf.get('pipeline.name'))
 for table, config in pipeline_config.items():
     @dlt.table(
         name=table,
