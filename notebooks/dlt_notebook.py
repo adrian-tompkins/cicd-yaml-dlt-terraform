@@ -11,9 +11,3 @@ for table, config in pipeline_config.items():
     def create_bronze_table():
         values = [[value] for value in config["values"]]
         return spark.createDataFrame(values, ["value"])
-
-
-    configuration.get_pipeline_config("my_dlt_pipeline")
-    print(table)
-    print(config["comment"])
-    print(config["keys"])
