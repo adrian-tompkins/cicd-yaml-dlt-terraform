@@ -18,7 +18,7 @@ resource databricks_pipeline this {
   for_each = fileset("../pipelines/", "*.yaml")
   name    = trimsuffix(each.value, ".yaml")
   configuration = {
-    "pipeline.yaml_config_path" = "${databricks_repo.this.path}/notebooks/dlt_notebook/${each.value}"
+    "pipeline.yaml_config_path" = "${databricks_repo.this.path}/pipelines/${each.value}"
   }
   development = true
 
