@@ -2,7 +2,7 @@
 import dlt
 from libs import configuration
 
-pipeline_config = configuration.get_pipeline_config(spark.conf.get('pipeline.name'))
+pipeline_config = configuration.get_pipeline_config(spark.conf.get('pipeline.yaml_config_path'))
 for table, config in pipeline_config.items():
     @dlt.table(
         name=table,
