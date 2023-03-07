@@ -1,5 +1,5 @@
 # Databricks notebook source
-%pip install yaml
+%pip install PyYAML==6.0
 
 # COMMAND ----------
 import dlt
