@@ -8,3 +8,8 @@ my_table_4:
   values:
     - another
     - table
+my_table_5:
+  comment: "A fifth table"
+  values:
+    - another
+    - table
